@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { PER_PAGE, KEY } from 'services/constant';
+import { PER_PAGE, KEY } from 'services/constants';
 
 axios.defaults.baseURL = 'https://pixabay.com/api';
 

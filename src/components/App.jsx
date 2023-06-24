@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import { Wrap } from 'components/App.styled.js';
+import { Wrap } from './App.styled';
 
-import { PER_PAGE } from 'services/constant';
-import * as API from '../services/api';
+import { PER_PAGE } from 'services/constants';
+import * as API from 'services/api';
 import Searchbar from 'components/Searchbar/Searchbar';
 import ImageGallery from 'components/ImageGallery/ImageGallery';
 import Button from 'components/Button/Button';
@@ -11,19 +11,14 @@ import Modal from 'components/Modal/Modal';
 
 class App extends Component {
   state = {
-    // resesarch word
     searchValue: '',
 
-    // array of gallery objects
     gallery: [],
 
-    //flag shower of spiner
     isLoading: false,
 
-    //flag shower button of 'read-more'
     isMore: false,
 
-    // {img:refer to large img,alt:text of attribute alt}
     modalImg: null,
   };
 
@@ -36,7 +31,6 @@ class App extends Component {
       });
   }
 
-  // helper function for working with request api
   requestToApi = async (searchValue, currentGallery) => {
     this.setState({ isLoading: true });
     try {
@@ -62,7 +56,6 @@ class App extends Component {
     }
   };
 
-  // submit new word
   handleSubmit = searchValue => {
     this.setState({
       searchValue,
